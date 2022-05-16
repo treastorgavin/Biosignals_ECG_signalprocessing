@@ -19,7 +19,7 @@ Using the first four beats from figure 2 Lead II was calculated using Einthoven�
 
 LEAD II = LEAD I + LEAD III
 
-***Equation 1: Einthoven’s Law ***
+***Equation 1: Einthoven’s Law***
 <img width="916" alt="image" src="https://user-images.githubusercontent.com/70657001/168645727-441a03e9-7ba4-4cbe-86c7-2e47a8b75f8c.png">
 
 ***Figure 2: Sitting ECG and Laying ECG Calculated vs Real for Lead II***
