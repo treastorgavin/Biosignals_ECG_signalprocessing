@@ -10,7 +10,7 @@ Gavin Rotsaert-Smith
 ## Exercise 1: Einthoven’s Law
 <img width="927" alt="image" src="https://user-images.githubusercontent.com/70657001/168645660-24af94bd-f734-4e3c-b5ad-58fb03d739d4.png">
 
-Figure 1: First 4 beats of sitting and laying ECG signals from Lead I
+***Figure 1: First 4 beats of sitting and laying ECG signals from Lead I*** 
 
 Using figure 1 the heart rate was calculated by averaging the time difference between R complexes of each beat as seen in figure 2. The inverse of this time would give us the heart rate
 and multiplying it by 60s gives the heart rate in beats per minute. The heart rate of sitting and laying were 82bpm and 58bpm respectively.
