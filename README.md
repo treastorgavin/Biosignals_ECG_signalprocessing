@@ -19,13 +19,13 @@ Using the first four beats from figure 2 Lead II was calculated using Einthoven�
 
 LEAD II = LEAD I + LEAD III
 
-***Equation 1: Einthoven’s Law
+***Equation 1: Einthoven’s Law ***
 <img width="916" alt="image" src="https://user-images.githubusercontent.com/70657001/168645727-441a03e9-7ba4-4cbe-86c7-2e47a8b75f8c.png">
 
-***Figure 2: Sitting ECG and Laying ECG Calculated vs Real for Lead II
+***Figure 2: Sitting ECG and Laying ECG Calculated vs Real for Lead II***
 <img width="807" alt="image" src="https://user-images.githubusercontent.com/70657001/168645851-331c7f53-41e3-465b-a31f-92137e97e5b6.png">
 
-***Figure 3: Mean Squared Error over time for Sitting and Laying Calculated vs Real (Lead II)
+***Figure 3: Mean Squared Error over time for Sitting and Laying Calculated vs Real (Lead II)***
 
 Figure 2 shows the real versus the calculated ECG signal for lead II. There is a small difference between the calculated and real. The error was calculated for each of these signals and can be seen in figure 4. The mean squared error was calculated between the calculated lead II and actual lead II. The mean squared error for sitting was 0.001 and 0.0001 for the laying ECG.
 
@@ -38,7 +38,7 @@ Artifacts were created by moving the right or left arm. The left arm artifacts h
 LEAD II = LL – RA
 LEAD III = LL – LA ***
 
-***Equation 2: Einthoven’s Leads calculated from Einthoven’s Triangle
+***Equation 2: Einthoven’s Leads calculated from Einthoven’s Triangle***
 
 Since leads I and III require the left arm electrode they are expected to experience noise artifacts. The right arm artifacts are therefore present in leads I and II based on Einthoven’s Triangle. The frequency components of the artifacts can be seen in figure 6 for the left arm. To recover the missing data the leads with distortion can be used to model the artifacts. To do this for the left arm lead I is subtracted from lead III and divided by 2. For the right arm lead I is added to lead II and divided by 2. The opposite signs are due to the artifacts being mirrors of each other as seen in Einthoven’s Triangle in figure 5. The error is then subtracted from the noisy signals. The results can be seen in figure 7 for lead I.
 
@@ -53,10 +53,10 @@ LEAD I = LEAD I – ERROR
 LEAD II = LEAD II – ERROR
 <img width="605" alt="image" src="https://user-images.githubusercontent.com/70657001/168646064-d84568bb-c160-4c46-88df-bb0e281a3c92.png">
 
-***Figure 6: Frequency domain of the left arm artifacts leads
+***Figure 6: Frequency domain of the left arm artifacts leads***
 <img width="831" alt="image" src="https://user-images.githubusercontent.com/70657001/168646109-3a9b9935-3be3-4aa0-bc9a-719bc7890802.png">
 
-***Figure 7 : Left and Right arm clean vs artifact signal for Lead I
+***Figure 7 : Left and Right arm clean vs artifact signal for Lead I***
 
 ## Exercise 2: Filtering the ECG
 
@@ -65,12 +65,12 @@ Lowpass Filtering
 The Butterworth filter designed has a cutoff frequency of 20Hz with an order of 10.
 <img width="841" alt="image" src="https://user-images.githubusercontent.com/70657001/168646166-1aa0ec86-084e-42bf-aa94-14be568f921f.png">
 
-***Figure 8: Magnitude and Phase Response of Butterworth filter
+***Figure 8: Magnitude and Phase Response of Butterworth filter***
 
 The Hanning filter has a window size of 30 and a cutoff frequency of 20Hz.
 <img width="852" alt="image" src="https://user-images.githubusercontent.com/70657001/168646203-4fbbbce8-c9bb-4c91-b257-88c77144ea21.png">
 
-***Figure 9: Magnitude and Phase Response of Hanning filter
+***Figure 9: Magnitude and Phase Response of Hanning filter***
 
 A Hanning filter with a window size of 30 was used. The Hanning filter increased the gain after filtering. To adjust the gain the numerator coefficients (bhann) were divided by the sum of the numerator coefficients.
 
@@ -83,18 +83,18 @@ ahann = zeros(1,length(bhann));
 ahann(1,1) = 1;
 <img width="854" alt="image" src="https://user-images.githubusercontent.com/70657001/168646247-f2bd5a19-91d3-4fb6-8232-6651d5c0d4fa.png">
 
-***Figure 10: Sitting Butterworth and Hanning filtered vs unfiltered for leads I, II, III
+***Figure 10: Sitting Butterworth and Hanning filtered vs unfiltered for leads I, II, III***
 <img width="846" alt="image" src="https://user-images.githubusercontent.com/70657001/168646281-95944abf-3db8-45b0-9cf5-1ab337829258.png">
 
-***Figure 11 : Laying Butterworth and Hanning filtered vs unfiltered for leads I, II, III
+***Figure 11 : Laying Butterworth and Hanning filtered vs unfiltered for leads I, II, III***
 <img width="822" alt="image" src="https://user-images.githubusercontent.com/70657001/168646315-38b3cadb-b1cf-42b8-85cf-a83ea0f48ccd.png">
 
-Figure 12: Sitting difference in filtered vs unfiltered ECG signals for Leads I, II, III
+Figure 12: Sitting difference in filtered vs unfiltered ECG signals for Leads I, II, III***
 <img width="921" alt="image" src="https://user-images.githubusercontent.com/70657001/168646335-220b367a-281b-4a85-9885-6cae67eab257.png">
 
-***Figure 13 : Laying difference in filtered vs unfiltered ECG signals for Leads I, II, III
+***Figure 13 : Laying difference in filtered vs unfiltered ECG signals for Leads I, II, III***
 
-***Table 1: SNR for Butterworth and Hanning filters for Leads I, II, III
+***Table 1: SNR for Butterworth and Hanning filters for Leads I, II, III***
 
 SNR (dB) Lead I Lead II Lead III
 Filter Butterworth Hanning Butterworth Hanning Butterworth Hanning
@@ -118,13 +118,13 @@ filt_dat = filtfilt(b,a,data);
 end
 <img width="859" alt="image" src="https://user-images.githubusercontent.com/70657001/168646512-be58e0eb-f525-433c-b4f5-163a540ac255.png">
 
-***Figure 14: Magnitude and Phase response of the notch filter
+***Figure 14: Magnitude and Phase response of the notch filter***
 <img width="804" alt="image" src="https://user-images.githubusercontent.com/70657001/168646537-4ba5fb43-6950-43c5-95dc-7f696a507074.png">
 
-***Figure 15: Filtered vs Unfiltered Notch filter time domain
+***Figure 15: Filtered vs Unfiltered Notch filter time domain***
 <img width="672" alt="image" src="https://user-images.githubusercontent.com/70657001/168646583-880cf0ab-2cac-4c5c-849f-f152d49698d4.png">
 
-***Figure 16: Filtered vs Unfiltered Notch filter frequency domain
+***Figure 16: Filtered vs Unfiltered Notch filter frequency domain***
 
 The notch filter was designed with a notch frequency of 60Hz. From figure 15 it is hard to tell the difference from the filtered and unfiltered data, when it is examined in the frequency domain it is clear that the noise at 60Hz (power line interference) has been removed from the signal.
 
@@ -132,25 +132,24 @@ The notch filter was designed with a notch frequency of 60Hz. From figure 15 it 
 <img width="838" alt="image" src="https://user-images.githubusercontent.com/70657001/168646666-27c44d4b-0824-495d-ac7c-e27b39740f0b.png">
 
 ***Figure 17: A few seconds of the Normal sinus rhythm, Ventricular Trigeminy, Ventricular
-Flutter and Supraventricular Tachyarrhythmia
+Flutter and Supraventricular Tachyarrhythmia***
 <img width="894" alt="image" src="https://user-images.githubusercontent.com/70657001/168646688-81250339-362e-4dc2-867f-2b4cba4e8cb9.png">
 
 ***Figure 18: Filtered vs Unfiltered Normal sinus rhythm, Ventricular Trigeminy, Ventricular
-Flutter and Supraventricular Tachyarrhythmia
+Flutter and Supraventricular Tachyarrhythmia***
 
 The filter used for to filter out the baseline drift was a 10th order high pass Butterworth filter with a cutoff frequency of 18Hz. The Butterworth was chosen as it worked well when filtering the previous ECG signals without disrupting the PQRST complex’s. The filtered and unfiltered data can be seen in figure 18.
 <img width="839" alt="image" src="https://user-images.githubusercontent.com/70657001/168646724-7a63fe06-d5c6-401d-a1f3-ffa5cb25bb5c.png">
 
-    ***Figure 19: Spectrogram of Normal Sinus Rhythm at window sizes of 60, 360 and
+    ***Figure 19: Spectrogram of Normal Sinus Rhythm at window sizes of 60, 360 and***
     <img width="852" alt="image" src="https://user-images.githubusercontent.com/70657001/168646752-3ae09851-2545-44f5-a1a0-d5cf3da33859.png">
 
-    ***Figure 20: Spectrogram Ventricular Trigeminy at window sizes of 60, 360 and
+    ***Figure 20: Spectrogram Ventricular Trigeminy at window sizes of 60, 360 and***
 <img width="844" alt="image" src="https://user-images.githubusercontent.com/70657001/168646791-c5cf60c3-2e8e-43a2-8f6f-765654b5830f.png">
 
-***Figure 21: Spectrogram of Ventricular Flutter at window sizes of 60, 360 and 720
+***Figure 21: Spectrogram of Ventricular Flutter at window sizes of 60, 360 and 720***
 <img width="846" alt="image" src="https://user-images.githubusercontent.com/70657001/168646819-dabebfe8-b0f8-4e6d-815c-6eb9b0b33c89.png">
 
-***Figure 22: Spectrogram of Supraventricular Tachyarrhythmia at window sizes of 60, 360 and
-720
+***Figure 22: Spectrogram of Supraventricular Tachyarrhythmia at window sizes of 60, 360 and 720***
 
 Based on the spectrograms in figures 19-22 as the window size increases the detail of the signal decreases, therefore increasing the window size will decrease the frequency resolution of the spectrogram.
