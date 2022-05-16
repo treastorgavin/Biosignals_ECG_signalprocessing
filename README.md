@@ -140,11 +140,10 @@ Flutter and Supraventricular Tachyarrhythmia***
 
 The filter used for to filter out the baseline drift was a 10th order high pass Butterworth filter with a cutoff frequency of 18Hz. The Butterworth was chosen as it worked well when filtering the previous ECG signals without disrupting the PQRST complex’s. The filtered and unfiltered data can be seen in figure 18.
 <img width="839" alt="image" src="https://user-images.githubusercontent.com/70657001/168646724-7a63fe06-d5c6-401d-a1f3-ffa5cb25bb5c.png">
+***Figure 19: Spectrogram of Normal Sinus Rhythm at window sizes of 60, 360 and***
+<img width="852" alt="image" src="https://user-images.githubusercontent.com/70657001/168646752-3ae09851-2545-44f5-a1a0-d5cf3da33859.png">
 
-    ***Figure 19: Spectrogram of Normal Sinus Rhythm at window sizes of 60, 360 and***
-    <img width="852" alt="image" src="https://user-images.githubusercontent.com/70657001/168646752-3ae09851-2545-44f5-a1a0-d5cf3da33859.png">
-
-    ***Figure 20: Spectrogram Ventricular Trigeminy at window sizes of 60, 360 and***
+***Figure 20: Spectrogram Ventricular Trigeminy at window sizes of 60, 360 and***
 <img width="844" alt="image" src="https://user-images.githubusercontent.com/70657001/168646791-c5cf60c3-2e8e-43a2-8f6f-765654b5830f.png">
 
 ***Figure 21: Spectrogram of Ventricular Flutter at window sizes of 60, 360 and 720***
